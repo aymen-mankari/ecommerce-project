@@ -1,10 +1,11 @@
-package com.ecommerceproject.dto;
+package com.ecommerceproject.dto.converters;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+import com.ecommerceproject.dto.ApplicationUserDTO;
 import com.ecommerceproject.entities.ApplicationUser;
 import com.ecommerceproject.entities.Customer;
 

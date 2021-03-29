@@ -1,10 +1,11 @@
-package com.ecommerceproject.dto;
+package com.ecommerceproject.dto.converters;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Component;
 
+import com.ecommerceproject.dto.ProductDTO;
 import com.ecommerceproject.entities.Product;
 
 @Component(value = "ProductConverter")

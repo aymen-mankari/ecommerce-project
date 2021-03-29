@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ecommerceproject.dto.CustomerConverter;
 import com.ecommerceproject.dto.CustomerDTO;
+import com.ecommerceproject.dto.converters.CustomerConverter;
 import com.ecommerceproject.entities.Customer;
 import com.ecommerceproject.service.ICustomerService;
 
@@ -33,7 +33,7 @@ public class CustomerServiceAPI {
 
 	@PostMapping("/create")
 	public void createCustomer(@RequestBody CustomerDTO customer) {
-		customerService.save(customerConverter.convertToBo(customer));
+		customerService.saveOrUpdate(customerConverter.convertToBo(customer));
 	}
 
 	@GetMapping("/getAll")
@@ -49,7 +49,7 @@ public class CustomerServiceAPI {
 	@PutMapping("/update")
 	public CustomerDTO updateCustomer(@RequestBody CustomerDTO customerDTO) {
 		Customer customer = customerConverter.convertToBo(customerDTO);
-		customerService.update(customer);
+		customerService.saveOrUpdate(customer);
 		return null;
 	}
 

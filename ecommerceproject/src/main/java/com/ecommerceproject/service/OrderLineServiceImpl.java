@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 import com.ecommerceproject.dao.OrderLineRepository;
 import com.ecommerceproject.entities.OrderLine;
 
-@Service(value = "OrderLineImpl")
-public class OrderLineImpl implements IOrderLineService {
+@Service(value = "OrderLineServiceImpl")
+public class OrderLineServiceImpl implements IOrderLineService {
 	@Autowired
 	private OrderLineRepository orderLineRepository;
 
@@ -27,13 +27,7 @@ public class OrderLineImpl implements IOrderLineService {
 	}
 
 	@Override
-	public OrderLine save(OrderLine orderLine) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public OrderLine update(OrderLine orderLine) {
+	public OrderLine saveOrUpdate(OrderLine orderLine) {
 		// TODO Auto-generated method stub
 		return null;
 	}

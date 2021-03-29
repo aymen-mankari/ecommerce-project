@@ -27,14 +27,8 @@ public class CustomerServiceImpl implements ICustomerService {
 	}
 
 	@Override
-	public Customer save(Customer customer) {
+	public Customer saveOrUpdate(Customer customer) {
 		return customerRepository.save(customer);
-	}
-
-	@Override
-	public Customer update(Customer customer) {
-		Customer updatedCustomer = customerRepository.save(customer);
-		return updatedCustomer;
 	}
 
 	@Override

@@ -10,7 +10,6 @@ public interface ICustomerService {
 	    
     Optional<Customer> get(Long id);
     List<Customer> getAll();
-    Customer save(Customer customer);
-    Customer update(Customer customer);
+    Customer saveOrUpdate(Customer customer);
     void delete(Long id);
 }

@@ -56,8 +56,8 @@ public class Order {
 		this.customer = customer;
 		this.orderLines = orderLines;
 	}
-	
-	public Order(Long id,Customer customer, List<OrderLine> orderLines, BigDecimal total) {
+
+	public Order(Long id, Customer customer, List<OrderLine> orderLines, BigDecimal total) {
 		super();
 		this.id = id;
 		this.customer = customer;
@@ -65,14 +65,17 @@ public class Order {
 		this.total = total;
 	}
 
-	public Double addOrderLinesAndCalculTotal(List<OrderLine> orderLines) {
-		Double total = 0.0;
+	public boolean addOrderLinesAndCalculTotal(List<OrderLine> orderLines) {
+		boolean flag = false;
 		if (!orderLines.isEmpty()) {
+			Double total = 0.0;
 			this.setOrderLines(orderLines);
 			total = this.orderLines.stream().mapToDouble(e -> e.getProduct().getPrice().doubleValue() * e.getQuantity())
 					.sum();
+			this.setTotal(new BigDecimal(total));
+			flag = true;
 		}
-		return total;
+		return flag;
 	}
 
 //	public void addOrderLines(OrderLine orderLine) {

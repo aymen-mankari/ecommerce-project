@@ -1,4 +1,4 @@
-package com.ecommerceproject.dto;
+package com.ecommerceproject.dto.converters;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.ecommerceproject.dto.CustomerDTO;
 import com.ecommerceproject.entities.Customer;
 
 @Component(value = "CustomerConverter")

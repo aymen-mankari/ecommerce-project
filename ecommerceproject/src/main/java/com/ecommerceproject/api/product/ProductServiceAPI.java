@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ecommerceproject.dto.ProductConverter;
 import com.ecommerceproject.dto.ProductDTO;
+import com.ecommerceproject.dto.converters.ProductConverter;
 import com.ecommerceproject.entities.Product;
 import com.ecommerceproject.service.IProductService;
 

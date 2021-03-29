@@ -1,4 +1,4 @@
-package com.ecommerceproject.dto;
+package com.ecommerceproject.dto.converters;
 
 import java.util.List;
 
