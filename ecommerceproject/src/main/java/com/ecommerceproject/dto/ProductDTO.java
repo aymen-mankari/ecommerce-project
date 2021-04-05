@@ -21,9 +21,10 @@ public class ProductDTO implements Serializable {
 	private String description;
 	private BigDecimal price;
 	private int stockQuantity;
+	private byte[] picByte;
 
 	public ProductDTO(Long idProduct, String reference, String designation, String description, BigDecimal price,
-			int stockQuantity) {
+			int stockQuantity, byte[] picByte) {
 		super();
 		this.idProduct = idProduct;
 		this.reference = reference;
@@ -31,6 +32,7 @@ public class ProductDTO implements Serializable {
 		this.description = description;
 		this.price = price;
 		this.stockQuantity = stockQuantity;
+		this.picByte=picByte;
 	}
 
 }
