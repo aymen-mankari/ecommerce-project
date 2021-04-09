@@ -30,8 +30,10 @@ public class OrderConverter implements IConverter<OrderDTO, Order> {
 
 	@Override
 	public Order convertToBo(OrderDTO o) {
-		return new Order(o.getIdOrder(), customerConverter.convertToBo(o.getCustomer()),
-				orderLineConverter.convertToBoList(o.getOrderLines()), o.getTotal());
+//		return new Order(o.getIdOrder(), customerConverter.convertToBo(o.getCustomer()),
+//				orderLineConverter.convertToBoList(o.getOrderLines()), o.getTotal());
+		
+		return new Order(o.getIdOrder(), customerConverter.convertToBo(o.getCustomer()), o.getTotal());
 	}
 
 	@Override

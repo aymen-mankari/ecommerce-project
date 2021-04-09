@@ -29,7 +29,7 @@ public class CustomerConverter implements IConverter<CustomerDTO, Customer> {
 	@Override
 	public Customer convertToBo(CustomerDTO o) {
 		return new Customer(o.getIdCustomer(),o.getFullName(), o.getEmailAddress(), o.getCity(), o.getPhone(),
-				applicationUserConverter.convertToBo(o.getApplicationUserDTO()));
+				applicationUserConverter.convertToBo(o.getUser()));
 	}
 
 	@Override

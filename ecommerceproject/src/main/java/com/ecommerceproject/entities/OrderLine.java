@@ -32,7 +32,8 @@ public class OrderLine {
 	private Long id;
 	@Column(nullable = false)
 	private int quantity;
-	@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	//@ManyToOne(cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
+	@ManyToOne(cascade = { CascadeType.ALL })
 	@JoinColumn(name = "order_id")
 	private Order order;
 	@OneToOne(cascade = { CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH })
@@ -43,6 +44,13 @@ public class OrderLine {
 		super();
 		this.quantity = quantity;
 		this.order = order;
+		this.product = product;
+	}
+	
+	public OrderLine(Long id, int quantity, Product product) {
+		super();
+		this.id= id;
+		this.quantity = quantity;
 		this.product = product;
 	}
 	

@@ -57,6 +57,20 @@ public class Order {
 		this.orderLines = orderLines;
 	}
 
+	public Order(Customer customer, List<OrderLine> orderLines,BigDecimal total) {
+		super();
+		this.customer = customer;
+		this.orderLines = orderLines;
+		this.total = total;
+	}
+	
+	public Order(Long id,Customer customer,BigDecimal total) {
+		super();
+		this.id = id;
+		this.customer = customer;
+		this.total = total;
+	}
+	
 	public Order(Long id, Customer customer, List<OrderLine> orderLines, BigDecimal total) {
 		super();
 		this.id = id;

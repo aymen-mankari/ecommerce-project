@@ -12,4 +12,5 @@ public interface ICustomerService {
     List<Customer> getAll();
     Customer saveOrUpdate(Customer customer);
     void delete(Long id);
+    Customer findByUsername(String username);
 }

@@ -2,8 +2,6 @@ package com.ecommerceproject.dto;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -22,17 +20,17 @@ public class CustomerDTO implements Serializable {
 	private String emailAddress;
 	private String city;
 	private String phone;
-	private ApplicationUserDTO applicationUserDTO;
+	private ApplicationUserDTO user;
 
 	public CustomerDTO(Long idCustomer, String fullName, String emailAddress, String city, String phone,
-			ApplicationUserDTO applicationUserDTO) {
+			ApplicationUserDTO user) {
 		super();
 		this.idCustomer = idCustomer;
 		this.fullName = fullName;
 		this.emailAddress = emailAddress;
 		this.city = city;
 		this.phone = phone;
-		this.applicationUserDTO = applicationUserDTO;
+		this.user = user;
 	}
 
 }

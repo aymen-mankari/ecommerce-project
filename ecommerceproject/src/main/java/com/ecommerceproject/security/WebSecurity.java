@@ -40,13 +40,14 @@ public class WebSecurity extends WebSecurityConfigurerAdapter {
 	protected void configure(HttpSecurity http) throws Exception {
 		//http.csrf().disable().authorizeRequests().antMatchers("/**").permitAll();
 
-		http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
-				.antMatchers("/**").permitAll();
-
+		//FOR TESTING PURPOSES
 //		http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
-//				.antMatchers(HttpMethod.POST, SIGN_UP_URL, "/customer/create").permitAll().anyRequest().authenticated()
-//				.and().addFilter(new JWTAuthenticationFilter(authenticationManager()))
-//				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
+//				.antMatchers("/**").permitAll();
+
+		http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().authorizeRequests()
+				.antMatchers(HttpMethod.POST, SIGN_UP_URL, "/customer/create").permitAll().anyRequest().authenticated()
+				.and().addFilter(new JWTAuthenticationFilter(authenticationManager()))
+				.addFilter(new JWTAuthorizationFilter(authenticationManager()));
 
 //		http.cors().configurationSource(corsConfigurationSource()).and().csrf().disable().sessionManagement()
 //		.sessionCreationPolicy(SessionCreationPolicy.STATELESS)

@@ -32,7 +32,9 @@ public class OrderLineConverter implements IConverter<OrderLineDTO, OrderLine> {
 
 	@Override
 	public OrderLine convertToBo(OrderLineDTO o) {
-		return new OrderLine(o.getId(), o.getQuantity(), orderConverter.convertToBo(o.getOrder()),
+//		return new OrderLine(o.getId(), o.getQuantity(), orderConverter.convertToBo(o.getOrder()),
+//				productConverter.convertToBo(o.getProduct()));
+		return new OrderLine(o.getId(), o.getQuantity(),
 				productConverter.convertToBo(o.getProduct()));
 	}
 

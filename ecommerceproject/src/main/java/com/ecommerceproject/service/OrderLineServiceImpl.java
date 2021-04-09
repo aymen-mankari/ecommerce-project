@@ -28,8 +28,7 @@ public class OrderLineServiceImpl implements IOrderLineService {
 
 	@Override
 	public OrderLine saveOrUpdate(OrderLine orderLine) {
-		// TODO Auto-generated method stub
-		return null;
+		return orderLineRepository.save(orderLine);
 	}
 
 	@Override

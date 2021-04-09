@@ -1,6 +1,5 @@
 package com.ecommerceproject.service;
 
-import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
 
@@ -37,4 +36,8 @@ public class CustomerServiceImpl implements ICustomerService {
 
 	}
 
+	@Override
+	public Customer findByUsername(String username) {
+		return customerRepository.findByApplicationUserUsername(username);
+	}
 }
